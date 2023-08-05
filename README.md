@@ -1,11 +1,38 @@
-# Spell-checker
-The code begins by defining several functions that will be used throughout the program.
-1.	The clean_text function takes a text input and removes all non-alphabetical characters except hyphens and apostrophes. It also converts the text to lowercase for consistency.
-2.	The build_dictionary function reads the corpus file and builds a dictionary of words and their frequencies. It uses the clean_text function to clean the text before processing it. Each word encountered in the corpus is added to the dictionary with its frequency.
-3.	The deletion, replacement, transposition, and insertion functions handle the four types of spelling mistakes described in the problem statement. They generate candidate words based on the given word by deleting, replacing, transposing, or inserting characters.
-4.	The find_best_suggestion function takes a misspelled word and the word frequency dictionary. It generates candidate words using the four types of mistakes and selects the most likely suggestion from the dictionary. If multiple suggestions have the same frequency, it picks the one that occurs first in lexicographical order.
-5.	The correct_spelling function takes the input text and the word frequency dictionary. It splits the text into individual words and checks each word for misspelling. If a word is in the dictionary, it is considered correct and added to the corrected text. If not, the function tries to find the best suggestion using the find_best_suggestion function. The corrected text, as well as the counts of errors and corrections, are returned.
-6.	The save_corrected_text function takes the corrected text and saves it to the specified output file.
+# Spelling Checker
+
+## Description
+
+Spelling Correction is a Python program that takes an input text, corrects the spelling of words, and saves the corrected text to an output file. It uses a word frequency dictionary to suggest the best corrections for misspelled words.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Flow of code](#flowOfCode)
+
+## Installation
+
+1. Clone the repository to your local machine.
+
+   ```bash
+   git clone https://github.com/overlordiam/Spell-checker.git
+   cd Spell-checker
+
+## Usage
+
+1. Place the text you want to correct in the `input.txt` file.
+2. Run the Python program using the following command:
+
+    ```bash
+    python s_checker.py
+
+## Features
+
+- Corrects the spelling of words in the input text using a word frequency dictionary.
+- Supports English words with hyphens and apostrophes.
+
+## Flow of code
 
 -	In the main program, the code starts by specifying the paths for the corpus file, input file, and output file.
 -	The program builds the word frequency dictionary by calling the build_dictionary function and passing the corpus file path.
